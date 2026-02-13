@@ -1,0 +1,66 @@
+.sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  background-color: var(--color-sidebar-bg);
+  border-right: 1px solid var(--color-border);
+  padding: 12px 0;
+}
+
+.sidebar-section {
+  margin-bottom: 16px;
+}
+
+.sidebar-title {
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-muted);
+  padding: 0 12px 6px;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 4px;
+}
+
+.sidebar-list {
+  list-style: none;
+}
+
+.sidebar-list li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 12px;
+  font-size: var(--font-size-small);
+  color: var(--color-link);
+  text-decoration: none;
+  transition: background-color 0.1s;
+}
+
+.sidebar-list li a:hover {
+  background-color: var(--color-table-hover);
+  text-decoration: none;
+}
+
+.sidebar-list li.active a {
+  background-color: var(--color-table-hover);
+  font-weight: 700;
+}
+
+.sidebar-team {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+.sidebar-note {
+  padding: 8px 12px;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}

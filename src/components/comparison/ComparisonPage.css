@@ -1,0 +1,115 @@
+.comparison-page {
+  max-width: 100%;
+}
+
+.comparison-header {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin: 12px 0 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.comparison-player {
+  flex: 1;
+  padding: 12px 16px;
+}
+
+.comparison-player h2 {
+  font-size: var(--font-size-h2);
+  margin-bottom: 2px;
+}
+
+.sengun-side {
+  background: linear-gradient(135deg, var(--color-sengun-win), transparent);
+}
+
+.opponent-side {
+  text-align: right;
+}
+
+.player-meta {
+  display: flex;
+  gap: 10px;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.opponent-side .player-meta {
+  justify-content: flex-end;
+}
+
+.player-team {
+  font-weight: 700;
+}
+
+.player-line {
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.comparison-vs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  background: var(--color-header-bg);
+  min-width: 72px;
+}
+
+.vs-text {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.vs-record {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-header-text);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.vs-wins {
+  color: var(--color-accent);
+}
+
+.vs-sep {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.vs-losses {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.comparison-note {
+  padding: 4px 0;
+}
+
+@media (max-width: 600px) {
+  .comparison-header {
+    flex-direction: column;
+  }
+
+  .opponent-side {
+    text-align: left;
+  }
+
+  .opponent-side .player-meta {
+    justify-content: flex-start;
+  }
+
+  .comparison-vs {
+    flex-direction: row;
+    gap: 8px;
+    padding: 6px 16px;
+  }
+}

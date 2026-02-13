@@ -1,0 +1,16 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+dist-ssr
+
+# Logs
+*.log
+
+# Claude Code
+.claude/
+
+# OS files
+.DS_Store
+*.local

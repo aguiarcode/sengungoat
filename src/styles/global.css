@@ -1,0 +1,235 @@
+@import './variables.css';
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: var(--font-size-base);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-body-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+h1 { font-size: var(--font-size-h1); font-weight: 700; }
+h2 { font-size: var(--font-size-h2); font-weight: 700; }
+h3 { font-size: var(--font-size-h3); font-weight: 700; }
+
+/* Layout */
+.page-wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  background-color: var(--color-content-bg);
+  min-height: 100vh;
+  box-shadow: 0 0 8px var(--color-card-shadow);
+}
+
+.main-content {
+  display: flex;
+  min-height: calc(100vh - var(--header-height) - 60px);
+}
+
+.content-area {
+  flex: 1;
+  padding: 16px 20px;
+  min-width: 0;
+}
+
+/* BBRef-style tables */
+table.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-small);
+  margin: 12px 0;
+}
+
+table.stats-table th,
+table.stats-table td {
+  border: 1px solid var(--color-table-border);
+  padding: 4px 8px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+table.stats-table th {
+  background-color: var(--color-table-header-bg);
+  color: var(--color-table-header-text);
+  font-weight: 700;
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+table.stats-table th:first-child,
+table.stats-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+}
+
+table.stats-table tbody tr:nth-child(even) {
+  background-color: var(--color-table-row-even);
+}
+
+table.stats-table tbody tr:nth-child(odd) {
+  background-color: var(--color-table-row-odd);
+}
+
+table.stats-table tbody tr:hover {
+  background-color: var(--color-table-hover);
+}
+
+/* Winner highlighting */
+table.stats-table td.sengun-wins {
+  background-color: var(--color-sengun-win);
+  color: var(--color-sengun-win-text);
+  font-weight: 700;
+}
+
+table.stats-table td.opponent-wins {
+  background-color: var(--color-opponent-win);
+}
+
+/* Metric toggle buttons */
+.metric-toggle {
+  display: flex;
+  gap: 0;
+  margin: 12px 0;
+  border: 1px solid var(--color-table-border);
+  border-radius: 4px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.metric-toggle button {
+  font-family: var(--font-family);
+  font-size: var(--font-size-small);
+  padding: 6px 14px;
+  border: none;
+  border-right: 1px solid var(--color-table-border);
+  background: var(--color-content-bg);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.metric-toggle button:last-child {
+  border-right: none;
+}
+
+.metric-toggle button:hover {
+  background-color: var(--color-table-hover);
+}
+
+.metric-toggle button.active {
+  background-color: var(--color-header-bg);
+  color: var(--color-header-text);
+}
+
+/* Cards */
+.player-card {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 12px 16px;
+  background: var(--color-content-bg);
+  transition: box-shadow 0.15s, transform 0.15s;
+  cursor: pointer;
+}
+
+.player-card:hover {
+  box-shadow: 0 2px 8px var(--color-card-shadow);
+  transform: translateY(-1px);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+  padding: 8px 0;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.breadcrumb a {
+  color: var(--color-link);
+}
+
+.breadcrumb span {
+  margin: 0 4px;
+  color: var(--color-text-light);
+}
+
+/* Analysis box */
+.analysis-box {
+  background: var(--color-sidebar-bg);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  padding: 12px 16px;
+  margin: 16px 0;
+  font-size: var(--font-size-small);
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.analysis-box .analysis-title {
+  font-weight: 700;
+  font-size: var(--font-size-base);
+  margin-bottom: 6px;
+  color: var(--color-text);
+}
+
+/* Stats table extras */
+.stats-table-wrapper {
+  overflow-x: auto;
+}
+
+table.stats-table .stat-full-name {
+  font-weight: 400;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+table.stats-table .metric-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+table.stats-table .diff-cell {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+}
+
+/* Utility */
+.text-muted { color: var(--color-text-muted); }
+.text-small { font-size: var(--font-size-small); }
+.text-xs { font-size: var(--font-size-xs); }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.font-bold { font-weight: 700; }
+.mt-1 { margin-top: 4px; }
+.mt-2 { margin-top: 8px; }
+.mt-3 { margin-top: 16px; }
+.mb-1 { margin-bottom: 4px; }
+.mb-2 { margin-bottom: 8px; }
+.mb-3 { margin-bottom: 16px; }

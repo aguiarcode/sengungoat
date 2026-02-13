@@ -1,0 +1,20 @@
+.player-selector {
+  margin: 8px 0 12px;
+  font-size: var(--font-size-small);
+}
+
+.player-selector label {
+  color: var(--color-text-muted);
+  margin-right: 4px;
+}
+
+.player-selector select {
+  font-family: var(--font-family);
+  font-size: var(--font-size-small);
+  padding: 4px 8px;
+  border: 1px solid var(--color-table-border);
+  border-radius: 3px;
+  background: var(--color-content-bg);
+  color: var(--color-text);
+  cursor: pointer;
+}
