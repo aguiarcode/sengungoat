@@ -11,6 +11,7 @@ export interface Player {
   id: string;
   name: string;
   team: string;
+  era: 'current' | 'alltime';
   age: number;
   gamesPlayed: number;
   minutesPerGame: number;
