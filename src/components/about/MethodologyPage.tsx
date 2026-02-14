@@ -95,7 +95,7 @@ export function MethodologyPage() {
       </section>
 
       <p className="methodology-disclaimer">
-        SegunGOAT is a satirical project. All stats are real. The cherry-picking is the joke.
+        SegunGOAT is a satirical project. All stats are real.
       </p>
     </div>
   );

@@ -5,7 +5,7 @@ type Theme = 'light' | 'dark';
 export function useTheme() {
   const [theme, setTheme] = useState<Theme>(() => {
     const stored = localStorage.getItem('sengungoat-theme');
-    return (stored === 'dark' ? 'dark' : 'light');
+    return (stored === 'light' ? 'light' : 'dark');
   });
 
   useEffect(() => {
