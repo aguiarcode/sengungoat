@@ -5,7 +5,7 @@ import './MethodologyPage.css';
 export function MethodologyPage() {
   useEffect(() => {
     document.title = 'Methodology | SegunGOAT';
-    return () => { document.title = 'SegunGOAT | The Greatest Of All Time (Statistically Speaking)'; };
+    return () => { document.title = 'SengunGOAT'; };
   }, []);
 
   return (

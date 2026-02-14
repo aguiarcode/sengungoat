@@ -28,7 +28,7 @@ export function ComparisonPage() {
 
   useEffect(() => {
     document.title = `Sengun vs ${opponent.name} | SegunGOAT`;
-    return () => { document.title = 'SegunGOAT | The Greatest Of All Time (Statistically Speaking)'; };
+    return () => { document.title = 'SengunGOAT'; };
   }, [opponent.name]);
 
   return (
