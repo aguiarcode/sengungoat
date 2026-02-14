@@ -1,7 +1,43 @@
 import { Link } from 'react-router-dom';
-import { opponents, sengun } from '../../data/players';
+import { currentOpponents, alltimeOpponents, sengun } from '../../data/players';
 import { cherryPick } from '../../engine/cherryPicker';
+import type { Player } from '../../types';
 import './HomePage.css';
+
+function PlayerGrid({ players }: { players: Player[] }) {
+  return (
+    <div className="player-grid">
+      {players.map(opponent => {
+        const stats = cherryPick(opponent);
+        const wins = stats.length;
+        return (
+          <Link
+            key={opponent.id}
+            to={`/compare/${opponent.id}`}
+            className="player-card"
+          >
+            <div className="card-header">
+              <span className="card-name">{opponent.name}</span>
+              <span className="card-team">{opponent.team}</span>
+            </div>
+            <div className="card-stats">
+              <span>{opponent.stats.perGame.pts}/{opponent.stats.perGame.reb}/{opponent.stats.perGame.ast}</span>
+              <span className="card-meta">
+                {opponent.gamesPlayed} GP | Age {opponent.age}
+              </span>
+            </div>
+            <div className="card-result">
+              <span className="win-count">
+                Sengun leads in {wins} categories
+              </span>
+              <span className="card-arrow">&rsaquo;</span>
+            </div>
+          </Link>
+        );
+      })}
+    </div>
+  );
+}
 
 export function HomePage() {
   return (
@@ -10,7 +46,7 @@ export function HomePage() {
         <h1>Alperen Sengun: The Statistical Case</h1>
         <p className="home-subtitle">
           A rigorous, data-driven comparison of Alperen Sengun against the NBA's top centers.
-          All statistics from the 2024-25 regular season.
+          Current season and all-time greats.
         </p>
       </div>
 
@@ -35,41 +71,17 @@ export function HomePage() {
         </div>
       </div>
 
-      <h2 className="section-title">Head-to-Head Comparisons</h2>
+      <h2 className="section-title">Current Centers (2024-25)</h2>
       <p className="text-muted text-small mb-3">
         Select any center to see a detailed statistical comparison.
       </p>
+      <PlayerGrid players={currentOpponents} />
 
-      <div className="player-grid">
-        {opponents.map(opponent => {
-          const stats = cherryPick(opponent);
-          const wins = stats.length;
-          return (
-            <Link
-              key={opponent.id}
-              to={`/compare/${opponent.id}`}
-              className="player-card"
-            >
-              <div className="card-header">
-                <span className="card-name">{opponent.name}</span>
-                <span className="card-team">{opponent.team}</span>
-              </div>
-              <div className="card-stats">
-                <span>{opponent.stats.perGame.pts}/{opponent.stats.perGame.reb}/{opponent.stats.perGame.ast}</span>
-                <span className="card-meta">
-                  {opponent.gamesPlayed} GP | Age {opponent.age}
-                </span>
-              </div>
-              <div className="card-result">
-                <span className="win-count">
-                  Sengun leads in {wins} categories
-                </span>
-                <span className="card-arrow">&rsaquo;</span>
-              </div>
-            </Link>
-          );
-        })}
-      </div>
+      <h2 className="section-title">All-Time Greats (Career Averages)</h2>
+      <p className="text-muted text-small mb-3">
+        Sengun vs. the legends — career averages, same result.
+      </p>
+      <PlayerGrid players={alltimeOpponents} />
     </div>
   );
 }

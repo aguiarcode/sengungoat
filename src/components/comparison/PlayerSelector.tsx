@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { opponents } from '../../data/players';
+import { currentOpponents, alltimeOpponents } from '../../data/players';
 
 interface PlayerSelectorProps {
   currentId: string;
@@ -15,11 +15,20 @@ export function PlayerSelector({ currentId, onChange }: PlayerSelectorProps) {
         value={currentId}
         onChange={(e) => onChange(e.target.value)}
       >
-        {opponents.map((p) => (
-          <option key={p.id} value={p.id}>
-            {p.name} ({p.team})
-          </option>
-        ))}
+        <optgroup label="Current (2024-25)">
+          {currentOpponents.map((p) => (
+            <option key={p.id} value={p.id}>
+              {p.name} ({p.team})
+            </option>
+          ))}
+        </optgroup>
+        <optgroup label="All-Time Greats">
+          {alltimeOpponents.map((p) => (
+            <option key={p.id} value={p.id}>
+              {p.name} ({p.team})
+            </option>
+          ))}
+        </optgroup>
       </select>
       <Link to="/" className="back-link">&larr; All comparisons</Link>
     </div>

@@ -65,7 +65,7 @@ export function ComparisonPage() {
           <h2>{opponent.name}</h2>
           <div className="player-meta">
             <span className="player-team">{opponent.team}</span>
-            <span>Age {opponent.age}</span>
+            <span>{opponent.era === 'alltime' ? 'Career' : '2024-25'}</span>
             <span>{opponent.gamesPlayed} GP</span>
             <span>{opponent.minutesPerGame} MPG</span>
           </div>
