@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { opponents, sengun } from '../../data/players';
-import { countWins } from '../../engine/cherryPicker';
+import { cherryPick } from '../../engine/cherryPicker';
 import './HomePage.css';
 
 export function HomePage() {
@@ -15,6 +15,12 @@ export function HomePage() {
       </div>
 
       <div className="home-sengun-summary">
+        <div className="sengun-photo">
+          <img
+            src={import.meta.env.BASE_URL + 'images/sengun.jpg'}
+            alt="Alperen Sengun"
+          />
+        </div>
         <div className="sengun-info">
           <h2>
             <span className="sengun-name">{sengun.name}</span>
@@ -36,7 +42,8 @@ export function HomePage() {
 
       <div className="player-grid">
         {opponents.map(opponent => {
-          const { wins, total } = countWins(opponent);
+          const stats = cherryPick(opponent);
+          const wins = stats.length;
           return (
             <Link
               key={opponent.id}
@@ -55,7 +62,7 @@ export function HomePage() {
               </div>
               <div className="card-result">
                 <span className="win-count">
-                  Sengun leads in {wins} of {total} categories
+                  Sengun leads in {wins} categories
                 </span>
                 <span className="card-arrow">&rsaquo;</span>
               </div>

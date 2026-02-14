@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import type { MetricType, ComparisonResult } from '../types';
 import { getOpponentById } from '../data/players';
-import { cherryPick, countWins, countWinsForMetric } from '../engine/cherryPicker';
+import { cherryPick } from '../engine/cherryPicker';
 import { generateAnalysis } from '../engine/analysisGenerator';
 
 export function useComparison(opponentId: string) {
@@ -13,17 +13,18 @@ export function useComparison(opponentId: string) {
     if (!opponent) return null;
 
     const stats = cherryPick(opponent, forcedMetric);
-    const { wins, total } = forcedMetric
-      ? countWinsForMetric(opponent, forcedMetric)
-      : countWins(opponent);
 
-    const analysisText = generateAnalysis(opponent, stats, wins, total);
+    // Display record = cherry-picked stats only (Sengun always wins all shown)
+    const sengunWins = stats.length;
+    const totalCategories = stats.length;
+
+    const analysisText = generateAnalysis(opponent, stats, sengunWins, totalCategories);
 
     return {
       opponent,
       stats,
-      totalCategories: total,
-      sengunWins: wins,
+      totalCategories,
+      sengunWins,
       analysisText,
     };
   }, [opponent, forcedMetric]);
