@@ -1,8 +1,8 @@
 .site-footer {
   background-color: var(--color-header-bg);
-  padding: 12px 20px;
+  padding: 16px 24px;
   text-align: center;
-  border-top: 2px solid var(--color-accent);
+  border-top: 3px solid var(--color-accent);
 }
 
 .footer-inner {
@@ -10,23 +10,32 @@
   margin: 0 auto;
 }
 
+.footer-streak {
+  font-size: 12px;
+  color: var(--color-accent);
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  margin-bottom: 8px;
+}
+
 .footer-disclaimer {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 4px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 6px;
 }
 
 .footer-links {
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .footer-links a {
   color: var(--color-accent);
   text-decoration: none;
+  transition: color var(--transition-fast);
 }
 
 .footer-links a:hover {
   text-decoration: underline;
-  color: var(--color-accent);
+  color: var(--color-accent-hover);
 }

@@ -6,36 +6,41 @@
   display: flex;
   align-items: stretch;
   gap: 0;
-  margin: 12px 0 16px;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
+  margin: 14px 0 20px;
+  border: none;
+  border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 2px 10px var(--color-card-shadow-hover);
 }
 
 .comparison-player {
   flex: 1;
-  padding: 12px 16px;
+  padding: 18px 22px;
 }
 
 .comparison-player h2 {
-  font-size: var(--font-size-h2);
-  margin-bottom: 2px;
+  font-size: 20px;
+  margin-bottom: 4px;
+  letter-spacing: -0.3px;
 }
 
 .sengun-side {
-  background: linear-gradient(135deg, var(--color-sengun-win), transparent);
+  background: linear-gradient(135deg, var(--color-sengun-win) 0%, var(--color-content-bg) 100%);
+  border-left: 4px solid var(--color-accent);
 }
 
 .opponent-side {
   text-align: right;
+  background: var(--color-content-bg);
+  border-right: 4px solid var(--color-table-border);
 }
 
 .player-meta {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   font-size: var(--font-size-xs);
   color: var(--color-text-muted);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .opponent-side .player-meta {
@@ -44,12 +49,14 @@
 
 .player-team {
   font-weight: 700;
+  color: var(--color-accent);
 }
 
 .player-line {
   font-size: var(--font-size-small);
   font-weight: 600;
   color: var(--color-text);
+  letter-spacing: 0.3px;
 }
 
 .comparison-vs {
@@ -57,25 +64,26 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 8px 16px;
+  padding: 12px 22px;
   background: var(--color-header-bg);
-  min-width: 72px;
+  min-width: 88px;
 }
 
 .vs-text {
-  font-size: var(--font-size-xs);
+  font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 2px;
 }
 
 .vs-record {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   color: var(--color-header-text);
   font-weight: 700;
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .vs-wins {
@@ -83,15 +91,16 @@
 }
 
 .vs-sep {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 16px;
 }
 
 .vs-losses {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .comparison-note {
-  padding: 4px 0;
+  padding: 6px 0;
 }
 
 @media (max-width: 600px) {
@@ -99,8 +108,14 @@
     flex-direction: column;
   }
 
+  .comparison-player {
+    padding: 14px 16px;
+  }
+
   .opponent-side {
     text-align: left;
+    border-right: none;
+    border-left: 4px solid var(--color-table-border);
   }
 
   .opponent-side .player-meta {
@@ -109,7 +124,7 @@
 
   .comparison-vs {
     flex-direction: row;
-    gap: 8px;
-    padding: 6px 16px;
+    gap: 10px;
+    padding: 8px 16px;
   }
 }

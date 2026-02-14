@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { opponents } from '../../data/players';
 
 interface PlayerSelectorProps {
@@ -20,6 +21,7 @@ export function PlayerSelector({ currentId, onChange }: PlayerSelectorProps) {
           </option>
         ))}
       </select>
+      <Link to="/" className="back-link">&larr; All comparisons</Link>
     </div>
   );
 }

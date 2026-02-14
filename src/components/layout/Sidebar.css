@@ -3,20 +3,20 @@
   min-width: var(--sidebar-width);
   background-color: var(--color-sidebar-bg);
   border-right: 1px solid var(--color-border);
-  padding: 12px 0;
+  padding: 16px 0;
 }
 
 .sidebar-section {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .sidebar-title {
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-xs);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   color: var(--color-text-muted);
-  padding: 0 12px 6px;
+  padding: 0 14px 8px;
   border-bottom: 1px solid var(--color-border);
   margin-bottom: 4px;
 }
@@ -29,21 +29,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 12px;
+  padding: 7px 14px;
   font-size: var(--font-size-small);
   color: var(--color-link);
   text-decoration: none;
-  transition: background-color 0.1s;
+  transition: all var(--transition-fast);
+  border-left: 3px solid transparent;
 }
 
 .sidebar-list li a:hover {
-  background-color: var(--color-table-hover);
+  background-color: var(--color-accent-subtle);
+  border-left-color: var(--color-accent);
   text-decoration: none;
+  color: var(--color-accent);
 }
 
 .sidebar-list li.active a {
-  background-color: var(--color-table-hover);
+  background-color: var(--color-accent-subtle);
+  border-left-color: var(--color-accent);
   font-weight: 700;
+  color: var(--color-accent);
 }
 
 .sidebar-team {
@@ -53,10 +58,10 @@
 }
 
 .sidebar-note {
-  padding: 8px 12px;
+  padding: 10px 14px;
   font-size: var(--font-size-xs);
   color: var(--color-text-light);
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 @media (max-width: 768px) {

@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
 .header-logo {
@@ -22,44 +22,42 @@
   gap: 8px;
   color: var(--color-header-text);
   text-decoration: none;
+  transition: opacity var(--transition-fast);
 }
 
 .header-logo:hover {
   text-decoration: none;
   color: var(--color-header-text);
-}
-
-.logo-icon {
-  font-size: 20px;
+  opacity: 0.9;
 }
 
 .logo-text {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.5px;
 }
 
 .logo-subtitle {
   font-size: 11px;
   color: var(--color-accent);
-  font-weight: 400;
-  margin-left: 4px;
-  opacity: 0.9;
+  font-weight: 500;
+  margin-left: 6px;
 }
 
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
 .header-nav a {
   color: var(--color-header-text);
   font-size: 13px;
   text-decoration: none;
-  padding: 4px 0;
-  opacity: 0.85;
-  transition: opacity 0.15s;
+  padding: 6px 0;
+  opacity: 0.8;
+  transition: opacity var(--transition-fast);
+  position: relative;
 }
 
 .header-nav a:hover {
@@ -68,18 +66,29 @@
   color: var(--color-header-text);
 }
 
+.header-nav a:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-accent);
+}
+
 .theme-toggle {
   background: none;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--color-header-text);
   font-size: 16px;
   cursor: pointer;
-  padding: 2px 8px;
-  border-radius: 4px;
+  padding: 4px 10px;
+  border-radius: 6px;
   line-height: 1;
-  transition: background-color 0.15s;
+  transition: all var(--transition-fast);
 }
 
 .theme-toggle:hover {
   background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
 }

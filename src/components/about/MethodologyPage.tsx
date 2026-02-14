@@ -1,7 +1,13 @@
+import { useEffect } from 'react';
 import { Breadcrumb } from '../layout/Breadcrumb';
 import './MethodologyPage.css';
 
 export function MethodologyPage() {
+  useEffect(() => {
+    document.title = 'Methodology | SegunGOAT';
+    return () => { document.title = 'SegunGOAT | The Greatest Of All Time (Statistically Speaking)'; };
+  }, []);
+
   return (
     <div className="methodology-page">
       <Breadcrumb items={[{ label: 'Methodology' }]} />

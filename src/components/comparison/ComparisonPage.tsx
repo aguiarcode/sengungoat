@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useComparison } from '../../hooks/useComparison';
 import { Breadcrumb } from '../layout/Breadcrumb';
@@ -24,6 +25,11 @@ export function ComparisonPage() {
   }
 
   const { opponent, stats, sengunWins, totalCategories, analysisText } = result;
+
+  useEffect(() => {
+    document.title = `Sengun vs ${opponent.name} | SegunGOAT`;
+    return () => { document.title = 'SegunGOAT | The Greatest Of All Time (Statistically Speaking)'; };
+  }, [opponent.name]);
 
   return (
     <div className="comparison-page">
@@ -80,9 +86,8 @@ export function ComparisonPage() {
       />
 
       <div className="comparison-note text-xs text-muted mb-2">
-        Showing {stats.length} statistical categories where Sengun leads.
+        Comparing {stats.length} key statistical categories.
         {!forcedMetric && ' Optimal metric type selected per category for most meaningful comparison.'}
-        {forcedMetric && ` Filtered to ${forcedMetric === 'perGame' ? 'Per Game' : forcedMetric === 'per36' ? 'Per 36' : forcedMetric === 'per100' ? 'Per 100' : 'Totals'} metrics.`}
       </div>
 
       <StatsTable stats={stats} opponent={opponent} />

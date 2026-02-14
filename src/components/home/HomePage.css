@@ -3,30 +3,33 @@
 }
 
 .home-hero {
-  margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid var(--color-accent);
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 3px solid var(--color-accent);
 }
 
 .home-hero h1 {
-  font-size: 24px;
-  margin-bottom: 4px;
+  font-size: 26px;
+  margin-bottom: 6px;
 }
 
 .home-subtitle {
   font-size: var(--font-size-small);
   color: var(--color-text-muted);
+  line-height: 1.6;
 }
 
 .home-sengun-summary {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
   background: var(--color-sidebar-bg);
   border: 1px solid var(--color-border);
   border-left: 4px solid var(--color-accent);
-  padding: 12px 16px;
-  margin-bottom: 24px;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  border-radius: 0 6px 6px 0;
+  box-shadow: 0 1px 4px var(--color-card-shadow);
 }
 
 .sengun-photo {
@@ -38,26 +41,27 @@
   height: 100px;
   object-fit: cover;
   object-position: top;
-  border-radius: 4px;
+  border-radius: 6px;
   border: 2px solid var(--color-border);
   background: var(--color-content-bg);
+  box-shadow: 0 2px 6px var(--color-card-shadow);
 }
 
 .sengun-info h2 {
   display: flex;
   align-items: baseline;
-  gap: 8px;
-  margin-bottom: 4px;
+  gap: 10px;
+  margin-bottom: 6px;
 }
 
 .sengun-name {
-  font-size: var(--font-size-h2);
+  font-size: 20px;
 }
 
 .sengun-team {
   font-size: var(--font-size-small);
-  color: var(--color-text-muted);
-  font-weight: 400;
+  color: var(--color-accent);
+  font-weight: 600;
 }
 
 .sengun-meta {
@@ -69,22 +73,23 @@
 
 .section-title {
   font-size: var(--font-size-h2);
-  margin-bottom: 4px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--color-border);
 }
 
 .player-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 12px;
-  margin-bottom: 24px;
+  gap: 14px;
+  margin-bottom: 28px;
 }
 
 .player-card {
   display: block;
   text-decoration: none;
   color: var(--color-text);
+  position: relative;
 }
 
 .player-card:hover {
@@ -95,22 +100,24 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .card-name {
   font-weight: 700;
-  font-size: var(--font-size-base);
+  font-size: 15px;
   color: var(--color-link);
+  transition: color var(--transition-fast);
 }
 
 .player-card:hover .card-name {
-  color: var(--color-link-hover);
+  color: var(--color-accent);
 }
 
 .card-team {
   font-size: var(--font-size-xs);
   color: var(--color-text-muted);
+  font-weight: 600;
 }
 
 .card-stats {
@@ -118,7 +125,7 @@
   justify-content: space-between;
   font-size: var(--font-size-small);
   color: var(--color-text-muted);
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .card-meta {
@@ -129,17 +136,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 6px;
+  padding-top: 8px;
   border-top: 1px solid var(--color-border);
 }
 
 .win-count {
   font-size: var(--font-size-xs);
   font-weight: 700;
-  color: var(--color-sengun-win-text);
+  color: var(--color-accent);
 }
 
 .card-arrow {
-  font-size: 18px;
+  font-size: 20px;
   color: var(--color-text-light);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.player-card:hover .card-arrow {
+  transform: translateX(3px);
+  color: var(--color-accent);
 }

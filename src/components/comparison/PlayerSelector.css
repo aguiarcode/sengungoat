@@ -1,11 +1,14 @@
 .player-selector {
   margin: 8px 0 12px;
   font-size: var(--font-size-small);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .player-selector label {
   color: var(--color-text-muted);
-  margin-right: 4px;
 }
 
 .player-selector select {
@@ -17,4 +20,27 @@
   background: var(--color-content-bg);
   color: var(--color-text);
   cursor: pointer;
+}
+
+.player-selector .back-link {
+  display: none;
+  font-size: var(--font-size-xs);
+  color: var(--color-link);
+}
+
+@media (max-width: 768px) {
+  .player-selector {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .player-selector select {
+    width: 100%;
+    padding: 8px;
+    font-size: var(--font-size-base);
+  }
+
+  .player-selector .back-link {
+    display: inline;
+  }
 }
