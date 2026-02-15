@@ -17,7 +17,11 @@ export function Footer() {
             Data via Basketball Reference
           </a>
           {' | '}
-          SegunGOAT &copy; {new Date().getFullYear()}
+          <a href="https://github.com/aguiarcode" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          {' | '}
+          SengunGOAT &copy; {new Date().getFullYear()}
         </p>
       </div>
     </footer>
